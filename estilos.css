@@ -19,8 +19,8 @@ body
 }
 header
 {
-	background: url("logo.png") no-repeat 95% center,
-	            url("fondo.png");
+	background: url("https://github.com/rllom/Mejorandola/raw/main/logo.png") no-repeat 95% center,
+	            url("https://github.com/rllom/Mejorandola/raw/main/fondo.png");
 	background-size: 300px , 50px 50px;
 	margin: 0 0 1em 0;
 	padding: 0.5em 0;
