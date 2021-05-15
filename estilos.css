@@ -1,11 +1,11 @@
 @font-face 
 {
     font-family: 'Cvanderoso';
-    src: url('https://rllom.github.io/Mejorandola/pincoyablack-webfont.eot');
-    src: url('https://rllom.github.io/Mejorandola/main/pincoyablack-webfont.eot?#iefix') format('embedded-opentype'),
-         url('https://rllom.github.io/Mejorandola/pincoyablack-webfont.woff') format('woff'),
-         url('https://rllom.github.io/Mejorandola/pincoyablack-webfont.ttf') format('truetype'),
-         url('https://rllom.github.io/Mejorandola/pincoyablack-webfont.svg#PincoyablackBlack') format('svg');
+    src: url('https://rllom.github.io/andromeda/pincoyablack-webfont.eot');
+    src: url('https://rllom.github.io/andromeda/main/pincoyablack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.woff') format('woff'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.ttf') format('truetype'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.svg#PincoyablackBlack') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,8 +19,8 @@ body
 }
 header
 {
-	background: url("https://rllom.github.io/Mejorandola/logo.png") no-repeat 95% center,
-	            url("https://rllom.github.io/Mejorandola/fondo.png");
+	background: url("https://rllom.github.io/andromeda/logo.png") no-repeat 95% center,
+	            url("https://rllom.github.io/andromeda/fondo.png");
 	background-size: 300px , 50px 50px;
 	margin: 0 0 1em 0;
 	padding: 0.5em 0;
