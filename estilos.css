@@ -16,7 +16,7 @@ body
 	font-family: "Open Sans", arial;
 	font-size: 16px;
 	text-align: center;
-}
+	}
 header
 {
 	background: url("https://rllom.github.io/andromeda/logo.png") no-repeat 95% center,
@@ -31,7 +31,7 @@ header h1
 	font-family: "Cvanderoso";
 	font-size: 7.5em;
 	margin: 0;
-	text-shadow: rgba(0,0,0,0.8) 5px 5px 10px;
+	text-shadow: rgba(0,0,0,0.8) 5px 5px 5px;
 }
 header h2
 {
@@ -49,7 +49,7 @@ header h2
 	padding: 1em;
 	text-align: left;
 	transition: all 0.5s ease;
-	width: 34%;
+	width: 33%;
 }
 #cochecito
 {
@@ -69,3 +69,19 @@ header h2
 	vertical-align: top;
 }
 
+/* iframe responsive 56.25*/
+.iframe-container {
+  overflow: hidden;
+  padding-top: 97.2%;
+  position: relative;
+} 
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+/* fin iframe responsive */
