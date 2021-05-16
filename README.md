@@ -1,3 +1,3 @@
-# Mejorandola
+# adromedda
 Font, Script de Andromeda
-Url directa EJ:   https://rllom.github.io/Mejorandola/index.html
+Url directa EJ:   https://rllom.github.io/andromeda/index.html
