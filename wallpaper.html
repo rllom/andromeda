@@ -1,0 +1,207 @@
+<DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8" />
+    <title>Www.RadioAndromeda.Tk</title>
+       <link rel="stylesheet" href="https://rllom.github.io/andromeda/normalize.css" />
+     <!-- <link rel="stylesheet" href="https://rllom.github.io/andromeda/estilos.css" /> -->
+       <script src="https://rllom.github.io/andromeda/prefixfree.min.js"></script>
+       <script src="https://rllom.github.io/andromeda/jquery-1.10.1.min.js"></script>
+      
+
+<style>
+@font-face 
+{
+    font-family: 'Cvanderoso';
+    src: url('https://rllom.github.io/andromeda/pincoyablack-webfont.eot');
+    src: url('https://rllom.github.io/andromeda/main/pincoyablack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.woff') format('woff'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.ttf') format('truetype'),
+         url('https://rllom.github.io/andromeda/pincoyablack-webfont.svg#PincoyablackBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body 
+{
+	background: #222;
+	color: #EEE;
+	font-family: "Open Sans", arial;
+	font-size: 16px;
+	text-align: center;
+}
+header
+{
+	background: url("https://rllom.github.io/andromeda/logo.png") no-repeat 95% center,
+	            url("https://rllom.github.io/andromeda/fondo.jpg");
+	background-size: 300px , 50px 50px;
+	margin: 0 0 1em 0;
+	padding: 0.5em 0;
+	width: 100%;
+}
+header h1
+{
+	font-family: "Cvanderoso";
+	font-size: 7.5em;
+	margin: 0;
+	text-shadow: rgba(0,0,0,0.8) 5px 5px 5px;
+}
+header h2
+{
+	margin: 0;
+	font-weight: normal;
+        font-size: 1.5em;
+	text-shadow: rgba(0,0,0,0.7) 2px 2px 5px;
+}
+#historia
+{
+	background: rgba(0,0,0,0.6);
+	border-radius: 0.5em;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+	margin: 0 2% 7em 1em;
+	padding: 1em;
+	text-align: left;
+	transition: all 0.5s ease;
+	width: 30%;
+}
+#cochecito
+{
+
+	background: rgba(0,0,0,0.6);
+	border-radius: 0.5em;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+	margin: 0 2% 7em 1em;
+	padding: 1em;
+	text-align: left;
+	transition: all 0.5s ease;
+	width: 34.4%;
+}
+#cochecito, #historia
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+A:link  {color:#ffcc00;text-decoration: none}
+A { text-decoration:none;  background-color:Transparent; color:#0055FF; }
+A:visited { color:#ffcc00;text-decoration: none}
+a:hover {COLOR: #ffffff}
+
+/*Boton de la Radio*/
+   .boton_personalizado{
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 80;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 50%;
+    border: 0px;
+    display: inline;
+    width: 35px;
+    height: 35px;
+    outline:none;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;cursor:pointer;
+    background-color: #FFDD33;
+  }
+
+/*Boton Play Esquina Derecha*/
+#inferior{
+position:fixed; /*El div sera ubicado con relacion a la pantalla*/
+right:15px; /*A la izquierda deje un espacio de 0px*/
+bottom:15px; /*Abajo deje un espacio de 0px*/
+z-index:0;
+ }
+</style>
+
+
+ 
+</head>
+<body>
+
+<span style='display:scroll; position:fixed; top:35%; left:10px; margin-left:auto; margin-right:auto;'>
+
+<img src="https://i.ibb.co/wJHWy7y/3patines.png" boder="0" width="67" height="auto">
+<br>
+
+<audio src="https://ssl.nexuscast.com:8043/stream" preload="none"></audio>
+
+<button id="boton" class="boton_personalizado">Play</button>
+
+<script>
+var v = document.getElementsByTagName("audio")[0];
+ var sound = false;
+ var boton = document.getElementById("boton");
+ boton.addEventListener("click", function(){
+	if (!sound) {
+		v.play();
+		this.innerHTML = "Stop";
+		sound = true;
+		console.log(this);
+	} else {
+		v.pause();
+		this.innerHTML = "Play";
+		sound = false;
+	}
+ });
+</script>
+
+
+</span> 
+
+<section>
+
+<!-- MAGICSTREAMS - START EMBEDDED IFRAME NATIVE PLAYER --> 
+<iframe width="100%" height="80" src="https://radioplayer.link/stream/index.php?autoplay=false&name=Radio Andromeda&bgcolor=D28526&textcolor=FFFFFF&v=real&stream=https://c11.radioboss.fm:18071/stream" 
+
+frameborder="0" scrolling="no" allow="autoplay;"></iframe> 
+<!-- MAGICSTREAMS - END EMBEDDED IFRAME NATIVE PLAYER -->
+
+<BR>
+<BR>
+   
+<article id="historia">
+ 
+<BR>
+<BR>
+
+
+<center>
+<canvas id="canvas_tt61d2336567a61" width="400" height="400"></canvas>
+
+<a href="https://24timezones.com/Managua/hora" style="text-decoration: none" class="clock24" id="tz24-1641165669-c1143-
+
+eyJzaXplIjoiMjUwIiwiYmdjb2xvciI6IjAwMDAwMCIsImxhbmciOiJlcyIsInR5cGUiOiJhIiwiY2FudmFzX2lkIjoiY2FudmFzX3R0NjFkMjMzNjU2N2E2MSJ9" title="reloj mundial - Managua" target="_blank"></a>
+<script type="text/javascript" src="https://w.24timezones.com/l.js" async></script>
+
+<BR><BR><BR>
+
+<!-- RadioBOSS Cloud NowPlaying Widget (Star) -->
+Sonando: <span id='rbcloud_nowplaying3919' style='display:yes;'></span>
+<br>Siguiente: <span id='rbcloud_nexttrack3919'></span>
+<br>Fieles: <span id='rbcloud_listeners3919'>...</span>
+
+<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&wid=3919&nl=1'></script>
+
+<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+</center>
+
+<BR>
+    </article>
+    <figure id="cochecito">
+    
+
+
+<!-- RadioBOSS Cloud Artwork Widget (Start) -->
+<img id='rbcloud_cover14610' src='https://c11.radioboss.fm/w/artwork/71.png' width='100%%' height='auto' alt='cover art'>
+<script src='https://c11.radioboss.fm/w/cover.js?u=71&wid=14610'></script>
+<!-- RadioBOSS Cloud Artwork Widget (End) -->
+ 
+       </figure>
+      </article>
+    </section>
+ </section>
+
+</body>
+</html>
