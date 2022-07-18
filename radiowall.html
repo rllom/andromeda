@@ -1,0 +1,89 @@
+<style>
+body
+{
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("radiowall.jpg");
+  color: #ffffff;
+  font-size: 22px;
+}
+A:link  {color:#ffcc00;text-decoration: none}
+A { text-decoration:none;  background-color:Transparent; color:#0055FF; }
+A:visited { color:#ffcc00;text-decoration: none}
+a:hover {COLOR: #ffffff}
+
+/*Boton de la Radio*/
+   .boton_personalizado{
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 80;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #748386;
+    border-radius: 50%;
+    border: 0px;
+    display: inline;
+    width: 50px;
+    height: 50px;
+    outline:none;
+  }
+  .boton_personalizado:hover{
+    color: #FFFFFF;cursor:pointer;
+    background-color: #424C55;
+  }
+</style>
+
+
+<body bgcolor=000000 style="MARGIN: 0px 0px 0px 0px" text=809990>
+
+
+<center>
+<br>
+<br>
+<!-- RadioBOSS Cloud Artwork Widget (Start) -->
+<img id='rbcloud_cover15531' src='https://c11.radioboss.fm/w/artwork/71.png' width='38%' height='auto' alt='cover art' style='border-radius: 20px 20px 20px 20px; box-shadow: 0px 0px 0px 0px #999999;'>
+<script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script>
+<!-- RadioBOSS Cloud Artwork Widget (End) -->
+
+<p>
+
+<!-- RadioBOSS Cloud NowPlaying Widget (Start) -->
+<div id='rbcloud_nowplaying16384'></div>
+<a href="http://radioandromeda.tk/" target="_blank"><span id='rbcloud_listeners16384'>...</span></a> 
+<a href="https://onlineradiobox.com/ni/andromeda/playlist/?cs=ni.andromeda" target="_blank">List</a>
+
+<div>Próximo Tema: <span id='rbcloud_nexttrack16384'>...</span></div>
+<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&amp;wid=16384'></script>
+<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+
+
+<BR>
+<audio src="https://c11.radioboss.fm:18071/stream" preload="none"></audio>
+
+<button id="boton" class="boton_personalizado">Play</button>
+
+<script>
+var v = document.getElementsByTagName("audio")[0];
+ var sound = false;
+ var boton = document.getElementById("boton");
+ boton.addEventListener("click", function(){
+	if (!sound) {
+		v.play();
+		this.innerHTML = "Stop";
+		sound = true;
+		console.log(this);
+	} else {
+		v.pause();
+		this.innerHTML = "Play";
+		sound = false;
+	}
+ });
+</script>
+
+</font>
+
+
+</center>
+
+
