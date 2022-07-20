@@ -12,3 +12,4 @@ https://rllom.github.io/andromeda/wallvideodj.html <br><br>
 https://rllom.github.io/andromeda/radiowall.html <br><br>
 
 https://rllom.github.io/andromeda/wallpublic/vinilo.html <br>
+https://rllom.github.io/andromeda/Hi-tech/Hi-tech Interface.v2.html
