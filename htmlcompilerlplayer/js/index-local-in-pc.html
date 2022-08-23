@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Radio Andromeda</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Cute+Font|Share+Tech&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+iframe { 
+    width: 100%;
+    height: 100%;
+}
+body, iframe {
+    border: 0;
+    background: #000000;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 16px;
+  color:#FFFFFF;
+}
+a:link  {color:#4A8F9F;text-decoration: none;
+}
+a {text-decoration:none;  background-color:Transparent; color:#0055FF;
+}
+a:visited { color:#4A8F9F;text-decoration: none;
+}
+a:hover {color: #ffffff;
+}
+</style>
+
+<body>
+
+<DIV  style='position:fixed; bottom:15px;  width: 100%; text-align: center;'>
+<a id="set-window-state-minimized" style="color: green; cursor: hand;">Minimizar</a> |
+<a onclick="return closeWindow();"   style="color: red; cursor: hand;">Cerrar App</a> 
+<script type="text/javascript">
+        function closeWindow() {
+  
+            // Open the new window 
+            // with the URL replacing the
+            // current page using the
+            // _self value
+            let new_window =
+                open(location, '_self');
+  
+            // Close this window
+            dhc.app.close();
+  
+            return false;
+        }
+</script>
+
+<script>
+ document.getElementById('set-window-state-minimized').addEventListener('click', function () {
+     dhc.window.setState({state: 'minimized'}).then(() => {
+       return false;   
+     });     
+   });         
+</script>
+</DIV>
+
+
+<iframe src="https://rllom.github.io/andromeda/htmlcompilerlplayer/v1.html"/>
+
+</body>
+</html>
