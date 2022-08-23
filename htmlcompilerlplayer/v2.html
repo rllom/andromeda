@@ -53,36 +53,8 @@ a:hover {color: #ffffff;
 <a  href="http://radioandromeda.tk" target="_blank">Sitio Web</a> | 
 <a   href="https://www.facebook.com/radioandromeda2" target="_blank">Facebook</a> | 
 <a href="javascript:location.reload()">Reiniciar</a>  | 
-<a id="set-window-state-minimized" style="color: green; cursor: hand;">Minimizar</a> |
-<a onclick="return closeWindow();"   style="color: red; cursor: hand;">Cerrar Apps</a>  |
 <a   href="v1.html" target="_self">v.2</a> 
 
-<script type="text/javascript">
-        function closeWindow() {
-  
-            // Open the new window 
-            // with the URL replacing the
-            // current page using the
-            // _self value
-            let new_window =
-                open(location, '_self');
-  
-            // Close this window
-            dhc.app.close();
-  
-            return false;
-        }
-</script>
-
-<script>
- document.getElementById('set-window-state-minimized').addEventListener('click', function () {
-     dhc.window.setState({state: 'minimized'}).then(() => {
-       return false;   
-     });     
-   });         
-</script>
-
 </center>
-
 </body>
 </html>
