@@ -2,14 +2,15 @@
 Font, Script de Andromeda <br><br>
 
 Url directa EJ:   
+https://rllom.github.io/andromeda/
 https://rllom.github.io/andromeda/index.html <br>
 https://rllom.github.io/andromeda/sonando.html <br>
-https://rllom.github.io/andromeda/wallpaper.html <br>
-https://rllom.github.io/andromeda/wallpaper2.html <br>
-https://rllom.github.io/andromeda/wallwork.html <br>
-https://rllom.github.io/andromeda/wallvideo.html <br>
-https://rllom.github.io/andromeda/wallvideodj.html <br><br>
-https://rllom.github.io/andromeda/radiowall.html <br><br>
+https://rllom.github.io/andromeda/wallpublic/wallpaper.html <br>
+https://rllom.github.io/andromeda/wallpublic/wallpaper2.html <br>
+https://rllom.github.io/andromeda/wallpublic/wallwork.html <br>
+https://rllom.github.io/andromeda/wallpublic/wallvideo.html <br>
+https://rllom.github.io/andromeda/wallpublic/wallvideodj.html <br><br>
+https://rllom.github.io/andromeda/wallpublic/radiowall.html <br><br>
 
 https://rllom.github.io/andromeda/wallpublic/vinilo.html <br>
-https://rllom.github.io/andromeda/Hi-tech/Hi-tech Interface.v2.html
+https://rllom.github.io/andromeda/Hi-tech/Hi-tech%20Interface.v2.html
