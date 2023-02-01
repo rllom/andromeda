@@ -8,6 +8,7 @@ https://rllom.github.io/andromeda/sonando.html <br>
 
 https://rllom.github.io/andromeda/wallpublic/wallpaper.html <br>
 https://rllom.github.io/andromeda/wallpublic/smartwallpaper.html<br>
+https://rllom.github.io/andromeda/wallpublic/smartv_tablet.html
 https://rllom.github.io/andromeda/wallpublic/wallwork.html <br>
 https://rllom.github.io/andromeda/wallpublic/wallvideo.html <br>
 https://rllom.github.io/andromeda/wallpublic/wallvideodj.html <br>
