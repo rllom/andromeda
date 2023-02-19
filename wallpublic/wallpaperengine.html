@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8" />
+   <title>Www.RadioAndromeda.Tk</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+
+<style>
+body
+A:link  {color:#ffcc00;text-decoration: none}
+A { text-decoration:none;  background-color:Transparent; color:#0055FF; }
+A:visited { color:#ffcc00;text-decoration: none}
+a:hover {COLOR: #ffffff}
+img
+{
+margin-bottom: -2px;
+margin-top: -6px; / * Los píxeles negativos deben ajustarse y probarse, no siempre que sean negativos, no habrá espacios * /
+}
+iframe {
+    margin-left: -8px;
+    padding-left 0px: ;
+    background: 000000; /* this is just to make the frames easier to see */
+    border: none;
+}
+/*Boton de la Radio*/
+   .boton_personalizado{
+    text-decoration: none;
+    padding: 0px;
+    font-weight: 80;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #748386;
+    border-radius: 50%;
+    border: 0px;
+    display: inline;
+    width: 35px;
+    height: 35px;
+    outline:none;
+  }
+  .boton_personalizado:hover{
+    color: #FFFFFF;cursor:pointer;
+    background-color: #424C55;
+  }
+  
+.reloj {
+width: 180px; 
+height: 20px; 
+padding: 0px 0px; 
+border: 0px solid black; 
+font: bold 1.1em dotum, "Michroma", arial; text-align: center; color:#0CD7C3;
+letter-spacing: 2px;
+}  
+</style>
+ 
+</head>
+	
+<body bgcolor=000000 style="MARGIN: 20px 20px 20px 20px" text=809990>
+
+
+
+<DIV style='display:scroll; position:fixed; top:30px; left:30px; width:50%; height:80%; margin-right:auto;'>
+<!-- BEGIN EMBED LUNA PLAYER --> 
+<iframe id='foot' width='100%' height='100%' src="https://rllom.github.io/andromeda/htmlcompilerlplayer/webplayer.html" frameborder="0" scrolling="no" allow="autoplay; "></iframe> 
+<!-- END EMBED LUNA PLAYER -->
+</div> 
+	
+<DIV id='floting' style='position:fixed; top:25px; width:40%; right:30px; margin-left:0; margin-right:0;'>
+
+<img id="rbcloud_cover732" src="https://c11.radioboss.fm/w/artwork/71.png" width="100%" height="auto" style='border-radius: 10px 10px 10px 10px; box-shadow: 0px 0px 0px 0px #000000;' alt="Radio Andromeda" />
+
+<script src='https://c11.radioboss.fm/w/cover.js?u=71&wid=732'></script>
+<!-- RadioBOSS Cloud Artwork Widget (End) -->
+
+</div> 
+
+<DIV style='display:scroll; position:fixed; bottom:100px; left:50px; width:100%; height:auto; margin-right:auto;'>
+
+<em><font color="ffffff" size="4">
+<!-- RadioBOSS Cloud NowPlaying Widget (Star) -->
+Sonando: <span id='rbcloud_nowplaying3919' style='display:yes;'></span>
+<br>Siguiente: <span id='rbcloud_nexttrack3919'></span>
+
+<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&wid=3919&nl=1'></script>
+<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+</font></em>
+
+</div> 
+
+
+<div id="relojnumerico" class="reloj" onload="cargarReloj()" style='display:scroll; position:fixed; top:5px; left:10px;'>
+<!-- Acá mostraremos el reloj --> 
+</div>
+
+<script>
+function cargarReloj(){
+    // Haciendo uso del objeto Date() obtenemos la hora, minuto y segundo 
+    var fechahora = new Date();
+    var hora = fechahora.getHours(); 
+    var minuto = fechahora.getMinutes(); 
+    var segundo = fechahora.getSeconds(); 
+    // Variable meridiano con el valor 'AM' 
+    var meridiano = "am";
+    // Si la hora es igual a 0, declaramos la hora con el valor 12 
+    if(hora == 0){
+        hora = 12;
+    }
+    // Si la hora es mayor a 12, restamos la hora - 12 y mostramos la variable meridiano con el valor 'PM' 
+    if(hora > 12) {
+        hora = hora - 12;
+        // Variable meridiano con el valor 'PM' 
+        meridiano = "pm";
+     }
+    // Formateamos los ceros '0' del reloj 
+    hora = (hora < 10) ? "0" + hora : hora;
+    minuto = (minuto < 10) ? "0" + minuto : minuto;
+    segundo = (segundo < 10) ? "0" + segundo : segundo;
+    // Enviamos la hora a la vista HTML 
+    var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
+    document.getElementById("relojnumerico").innerText = tiempo;
+    document.getElementById("relojnumerico").textContent = tiempo;
+    // Cargamos el reloj a los 500 milisegundos 
+    setTimeout(cargarReloj, 500);
+ }
+// Ejecutamos la función 'CargarReloj' 
+cargarReloj();
+</script>
+
+
+</body>
+</html>
