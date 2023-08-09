@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualizador de Música en Streaming</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <button id="playButton">Play</button>
+  <canvas id="visualizerCanvas"></canvas>
+ 
+<script>
+let audio;
+let analyzer;
+let isPlaying = false;
+
+function setup() {
+  createCanvas(800, 400);
+  audio = new Audio('https://c11.radioboss.fm:8071/stream');
+  analyzer = new p5.FFT();
+  
+  document.getElementById("playButton").addEventListener("click", () => {
+    if (!isPlaying) {
+      audio.play().then(() => {
+        isPlaying = true;
+        analyzer.setInput(audio);
+      }).catch(error => {
+        console.error("Error al reproducir el audio:", error);
+      });
+    }
+  });
+}
+
+function draw() {
+  background(0);
+
+  if (isPlaying) {
+    let spectrum = analyzer.analyze();
+
+    noStroke();
+    fill(255, 0, 0); // Color de las barras
+
+    for (let i = 0; i < spectrum.length; i++) {
+      let x = map(i, 0, spectrum.length, 0, width);
+      let h = -height + map(spectrum[i], 0, 255, height, 0);
+      rect(x, height, width / spectrum.length, h);
+    }
+  }
+}
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
