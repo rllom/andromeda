@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8" />
+   <title>Www.RadioAndromeda.Tk</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shantell Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allura">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+
+<style>
+body
+A:link  {color:#ffcc00;text-decoration: none}
+A { text-decoration:none;  background-color:Transparent; color:#0055FF;}
+A:visited { color:#ffcc00;text-decoration: none}
+a:hover {COLOR: #ffffff}
+
+.reloj {
+width: 180px; 
+height: 20px; 
+padding: 0px 0px; 
+border: 0px solid black; 
+font: bold 1.1em dotum, "Michroma", arial; text-align: center; color:#0CD7C3;
+letter-spacing: 2px;
+}  
+</style>
+ 
+<style>    
+img {
+  border-radius: 10px;
+  
+}
+img:hover{
+border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 10px 10px #ec731e;
+-webkit-box-shadow: 0px 0px 10px 10px #ec731e;
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+}
+
+</style>
+
+
+</head>
+	
+<body bgcolor=000000 style="MARGIN: 20px 20px 20px 20px" text=809990>
+
+<DIV style='display:scroll; position:fixed; top:30px; left:40px; width:50%; height:80%; margin-right:auto;'>
+<!-- BEGIN EMBED LUNA PLAYER --> 
+<iframe id='foot' width='100%' height='100%' src="https://rllom.github.io/andromeda/htmlcompilerlplayer/webplayer.html" frameborder="0" scrolling="no" allow="autoplay; "></iframe> 
+<!-- END EMBED LUNA PLAYER -->
+</div> 
+	
+<DIV id='floting' style='position:fixed; top:25px; width:40%; right:30px; margin-left:0; margin-right:0;'>
+
+<a href="http://radioandromeda.tk" title="Radio Andromeda Website">
+<img id="rbcloud_cover732" src="https://c11.radioboss.fm/w/artwork/71.png" width="100%" height="auto" style='border-radius: 10px 10px 10px 10px; box-shadow: 0px 0px 0px 0px #000000;' alt="Radio Andromeda" /></a>
+
+<script src='https://c11.radioboss.fm/w/cover.js?u=71&wid=732'></script>
+<!-- RadioBOSS Cloud Artwork Widget (End) -->
+
+</div> 
+
+<DIV style='display:scroll; position:fixed; bottom:90px; left:50px; width:100%; height:auto; margin-right:auto;'>
+
+<b>
+<FONT style="font-size:18pt" face="Roboto Condensed" COLOR=#A4ACCC>
+<!-- RadioBOSS Cloud NowPlaying Widget (Star) -->
+Sonando: <span id='rbcloud_nowplaying3919' style='display:yes;'></span>
+<br>Viene: <span id='rbcloud_nexttrack3919'></span>
+
+<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&wid=3919&nl=1'></script>
+<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+</font>
+</b>
+
+</div> 
+
+
+<div id="relojnumerico" class="reloj" onload="cargarReloj()" style='display:scroll; position:fixed; bottom:90px; right:30px;'>
+<!-- Acá mostraremos el reloj --> 
+</div>
+
+<script>
+function cargarReloj(){
+    // Haciendo uso del objeto Date() obtenemos la hora, minuto y segundo 
+    var fechahora = new Date();
+    var hora = fechahora.getHours(); 
+    var minuto = fechahora.getMinutes(); 
+    var segundo = fechahora.getSeconds(); 
+    // Variable meridiano con el valor 'AM' 
+    var meridiano = "am";
+    // Si la hora es igual a 0, declaramos la hora con el valor 12 
+    if(hora == 0){
+        hora = 12;
+    }
+    // Si la hora es mayor a 12, restamos la hora - 12 y mostramos la variable meridiano con el valor 'PM' 
+    if(hora > 12) {
+        hora = hora - 12;
+        // Variable meridiano con el valor 'PM' 
+        meridiano = "pm";
+     }
+    // Formateamos los ceros '0' del reloj 
+    hora = (hora < 10) ? "0" + hora : hora;
+    minuto = (minuto < 10) ? "0" + minuto : minuto;
+    segundo = (segundo < 10) ? "0" + segundo : segundo;
+    // Enviamos la hora a la vista HTML 
+    var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
+    document.getElementById("relojnumerico").innerText = tiempo;
+    document.getElementById("relojnumerico").textContent = tiempo;
+    // Cargamos el reloj a los 500 milisegundos 
+    setTimeout(cargarReloj, 500);
+ }
+// Ejecutamos la función 'CargarReloj' 
+cargarReloj();
+</script>
+
+
+
+
+<DIV id='float' style='position:fixed; bottom:25px; width:100%; left:0px; margin-left:0; margin-right:0;'>
+
+
+
+<!-- DAILY -->
+<center>
+<a href="https://www.banprogrupopromerica.com.ni/" target="_blank"> <img src="https://image.ibb.co/krXqxR/banpro.jpg" title="BANPRO"></span></a>
+
+<a href="https://www1.disnorte-dissur.com.ni/" target="_blank"> <img src="https://i.ibb.co/71jXnzP/dissur.jpg" title="Dissur"></span></a>
+
+<a href="http://www.ebay.com" target="_blank"><img src="https://image.ibb.co/gvq66m/ebay.jpg" title="ebay"></a>
+
+<a href="https://www.onlineftp.ch/" target="_blank"><img src="https://i.ibb.co/By7GH7Y/ftp.jpg" title="Web based FTP Client"></a>
+
+<a href="https://www.google.com/android/find?hl=es" target="_blank"><img src="https://i.ibb.co/GdLYJQY/celu.jpg" title="Encontrar Mi Cel"></a>
+
+<!-- DESCARGAS -->
+&nbsp;&nbsp;&nbsp;
+
+<a href="https://openai.com/blog/chatgpt/" target="_blank"><img src="https://i.ibb.co/N9Dvxx4/Chat-GPT-Logo-PNG-1.jpg" title="ChatGPT"></a>
+
+<a href="https://www.filehippo.com/es/" target="_blank"><img src="https://i.ibb.co/CsqWXSg/filehippo.jpg" title="Filehippo"></a>
+
+<a href="https://www.cinecalidad.lat/" target="_blank"><img src="https://i.ibb.co/KbDbCL5/cinec.jpg" title="Cine Calidad"></a>
+
+<a href="https://www.cinecalidad.re/" target="_blank"><img src="https://i.ibb.co/KbDbCL5/cinec.jpg" title="CineCalidad.re"></a>
+
+<!-- GOOGLE -->
+&nbsp;&nbsp;&nbsp;
+<a href="https://mail.yahoo.com/" target="_blank"><img src="https://i.ibb.co/Z6yFJDq/yahoo.jpg" title="Yahoo Mail"></a> 
+
+<a href="https://mail.google.com/mail/" target="_blank"><img src="https://image.ibb.co/h2wuP6/gmail.jpg" title="GMAIL"></a>
+
+<a href="https://keep.google.com/#home" target="_blank"><img src="https://image.ibb.co/mTDkWm/keep.jpg" title="KEEP"></a>
+ 
+<a href="https://drive.google.com/drive/my-drive" target="_blank"><img src="https://image.ibb.co/bQjQWm/drive.jpg" title="DRIVE"></a>
+ 
+<a href="https://translate.google.com/?hl=es" target="_blank"><img src="https://image.ibb.co/d6yVxR/traductor.jpg" title="TRADUCTOR"></a>
+ 
+<a href="http://www.youtube.com" target="_blank"><img src="https://image.ibb.co/fLE3HR/ytube.jpg" title="YOUTUBE"></a>
+
+<a href="https://play.google.com/store?hl=es&tab=w8" target="_blank"><img src="https://image.ibb.co/m3kzrm/gplay.jpg" title="GPLAY"></a>
+
+<a href="https://maps.google.com/" target="_blank"><img src="https://image.ibb.co/hfdxcR/gmap.jpg" title="GMAP"></a>
+
+<!-- SHORTRL -->
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.blindworlds.com" target="_blank"><img src="https://image.ibb.co/hehOHR/blindworld.jpg" title=""></a>
+
+<a href="http://www.ciudadblogger.com/" target="_blank"><img src="https://image.ibb.co/dg75Zp/comunidablogger.png" title="Comunidad Blogger"></a>
+
+<a href="https://goo.su/" target="_blank"><img src="https://i.ibb.co/MRp1CN5/goo-su.jpg" title="Goo.su"></a>
+ 
+<a href="https://bitly.com" target="_blank"><img src="https://image.ibb.co/kEz3HR/bitly.jpg" title="BITLY"></a>
+
+
+<!-- REDES -->
+&nbsp;&nbsp;&nbsp;
+<a href="https://facebook.com" target="_blank"><img src="https://image.ibb.co/nz0zrm/fb.jpg" title="Facebook"></a>
+
+<a href="https://www.instagram.com/" target="_blank"><img src="https://i.ibb.co/QYMB7Xw/instagram.jpg" title="Instagram"></a>
+
+<a href="https://www.tiktok.com/@rllom" target="_blank"><img src="https://i.ibb.co/LCM9RGK/tiktok.jpg" title="TikTok"></a>
+
+<a href="http://twitter.com" target="_blank"><img src="https://image.ibb.co/dz2qxR/twitter.jpg" title="Twitter"></a>
+
+<a href="https://web.whatsapp.com/es" target="_blank"><img src="https://image.ibb.co/cVhZP6/whatsaap.jpg" title="Whatsapp Web"></a>
+
+<a href="https://web.telegram.org/#/im" target="_blank"><img src="https://i.ibb.co/Y8zz6HW/telegram.jpg" title="Telegram"></a>
+
+<!-- UPLOAD -->
+&nbsp;&nbsp;&nbsp;
+<a href="https://onedrive.live.com/" target="_blank"><img src="https://i.ibb.co/s6wT9Tn/onedrive.jpg" title="OneDrive"></a>
+
+<a href="https://www.dropbox.com" target="_blank"><img src="https://image.ibb.co/jGBTj6/dropbox.jpg" title="Dropbox"></a>
+ 
+<a href="https://www.opendrive.com" target="_blank"><img src="https://image.ibb.co/iZqoj6/opendrive.jpg" title="Drive"></a>
+
+<a href="https://mega.nz" target="_blank"><img src="https://image.ibb.co/dHh146/mega.jpg" title="Mega"></a>
+  
+<a href="http://www.mediafire.com" target="_blank"><img src="https://image.ibb.co/iFe30U/mediafire.png" title="Medifire"></a>
+
+<a href="https://kustod.io/" target="_blank"><img src="https://i.ibb.co/C9shBCT/kustod.jpg" title="Kustod.io"></a>
+
+<a href="https://degoo.com/" target="_blank"><img src="https://i.ibb.co/vj2GHnB/degoo-cloud.jpg" title="Degoo"></a>
+
+<a href="https://www.pinterest.es/" target="_blank"><img src="https://i.ibb.co/PTdhtk6/printerest.jpg" title="Printerest"></a>
+
+<a href="https://imgbb.com/" target="_blank"><img src="https://image.ibb.co/erbPsR/imgbb.jpg" title="ImgBB"></a>
+
+<a href="https://imgbox.com/" target="_blank"><img src="https://i.ibb.co/g31VMk3/imgbox.jpg" title="imgbox"></a>
+
+
+<!-- MY WEBSITES -->
+&nbsp;&nbsp;&nbsp;
+
+<a href="https://www.radioboss.fm/whmcs/clientarea.php" target="_blank"><img src="https://i.ibb.co/PhW8hBQ/radiobossfm.jpg" title="Radiobossfm Client Area"></a>
+
+<a href="https://c11.radioboss.fm/#main" target="_blank"><img src="https://i.ibb.co/fthgwJG/radiobossfm2.jpg" title="RadioBoss Cloud"></a>
+
+<a href="https://www.blogger.com/" target="_blank"><img src="https://image.ibb.co/f9F2Be/blogger.png" title="BLOGGER"></a>
+
+<a href="https://github.com/" target="_blank"><img src="https://i.ibb.co/QDbm2w6/github.jpg" title="GitHub"></a>
+
+<a href="http://www.freenom.com/es/index.html" target="_blank"><img src="https://image.ibb.co/meYm1p/Freenom.jpg" title="Frenom"></a>
+
+<a href="https://pastebin.com/" target="_blank"><img src="https://i.ibb.co/d0C97bd/pasebin.jpg" title="Pastebin"></a>
+  
+<a href="https://www.androidcreator.com/es/" target="_blank"><img src="https://image.ibb.co/kOFccR/android.jpg" title="AndriodCreator"></a>
+
+<a href="https://www.billboard.com/charts/hot-100" target="_blank"><img src="https://image.ibb.co/j2RrSo/billboard.jpg" title="Top100 Billboard"></a>
+
+</div> 
+
+</body>
+</html>
+
+https://www.enriquejros.com/efectos-imagenes-css/
