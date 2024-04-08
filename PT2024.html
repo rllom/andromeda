@@ -76,12 +76,13 @@ letter-spacing: 1px;
 </div>
 
     <audio id="audio" src="https://c11.radioboss.fm:18071/stream" preload="none"></audio>
-  <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="100%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
-    <script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script> 
-  
+    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="100%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
+    <script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script>
+
+
 <script>
 var audio = document.getElementById("audio");
-var imagen = document.getElementById("imagen");
+var imagen = document.getElementById("rbcloud_cover15531");
 var overlay = document.getElementById("overlay");
 var sound = false;
 
@@ -99,8 +100,9 @@ imagen.addEventListener("click", function() {
   } else {
     audio.pause();
     audio.src = audio.src;
-    imagen.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUZzOjpc68RK4dc3o1q-WJjCLDhdmO8GRu3rFpQNKh9iMDoTF2Hez9OwW44wnERE6L6OezlpR_6Az6O_EjyRZuVMA-wVo0poe0kwFZQnS-I1MBYijxiNCOK1n7iIH7fG-UkCi378GAT_bQC_gH61k0i7QS4tUhzjUbT1F_BXuCibRcadoyBWol_gXbg5xW/s1600/logo-play.png"; // Cambia la imagen a una imagen de reproducción
+    imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de reproducción
     imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
+    imagen.setAttribute("id", "rbcloud_cover15531");
     imagen.setAttribute("width", "100%");
     imagen.setAttribute("height", "auto");
     imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
