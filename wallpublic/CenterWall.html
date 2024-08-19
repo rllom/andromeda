@@ -12,13 +12,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
-  background-image: url("https://i.ibb.co/DgtfH2M/raygreen.jpg"); /* https://i.ibb.co/DgtfH2M/raygreen.jpg, https://i.ibb.co/qgdzC3L/futurist-HUD.jpg, https://i.ibb.co/C6mCrz7/skyblue.jpg */
+  background-image: url("https://i.ibb.co/t3BssWQ/skyblue2.jpg"); /* https://i.ibb.co/DgtfH2M/raygreen.jpg, https://i.ibb.co/86153t3/raygreen2.jpg, https://i.ibb.co/qgdzC3L/futurist-HUD.jpg, https://i.ibb.co/C6mCrz7/skyblue.jpg, https://i.ibb.co/t3BssWQ/skyblue2.jpg */
   background-size: cover;  
   background-repeat: no-repeat; 
   background-size: cover; 
   background-position: center;
   background-attachment: fixed;
-height: 72vh;
+height: 70vh;
 margin: 5%;
 display: flex;
 flex-direction: column;
@@ -60,7 +60,7 @@ letter-spacing: 1px;
 <div class="overlay" id="overlay"></div>
 
     <audio id="audio" src="https://c11.radioboss.fm:18071/stream" preload="none"></audio>
-    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="500px" height="500px" alt="Imagen de reproducción" style="cursor: pointer;">
+    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="430px" height="430px" alt="Imagen de reproducción" style="cursor: pointer;">
     <script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script>
 
 
@@ -76,8 +76,8 @@ imagen.addEventListener("click", function() {
     audio.play();
     imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de pausa
     imagen.setAttribute("id", "rbcloud_cover15531");
-    imagen.setAttribute("width", "500px");
-    imagen.setAttribute("height", "500px");
+    imagen.setAttribute("width", "430px");
+    imagen.setAttribute("height", "430px");
   
     imagen.classList.add("rotate"); // Agrega la clase 'rotate' para la animación de rotación
     overlay.classList.add("active"); // Mostrar la capa oculta
@@ -88,8 +88,8 @@ imagen.addEventListener("click", function() {
     imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de reproducción
     imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
     imagen.setAttribute("id", "rbcloud_cover15531");
-    imagen.setAttribute("width", "500px");
-    imagen.setAttribute("height", "500px");
+    imagen.setAttribute("width", "430px");
+    imagen.setAttribute("height", "430px");
     imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
     overlay.classList.remove("active"); // Ocultar la capa oculta
     sound = false;
@@ -107,8 +107,8 @@ setInterval(updateImage, 10000);
 var style = document.createElement('style');
 style.innerHTML = `
 .rotate {
-  width: 500px;
-  height: 500px;
+  width: 430px;
+  height: 430px;
   position: relative;
   animation: rotation 7s linear infinite;
   border-radius: 50%;
@@ -164,7 +164,7 @@ cargarReloj();
 </script>
 
 
-<DIV id='float' style='position:absolute; bottom:70px; width:100%; left:0px; margin-left:0; margin-right:0; font: bold 0.8em dotum, "Michroma", arial; text-align: center; color:#ffffff; letter-spacing: 0.5px;'>
+<DIV id='float' style='position:absolute; bottom:80px; width:100%; left:0px; margin-left:0; margin-right:0; font: bold 0.8em dotum, "Michroma", arial; text-align: center; color:#ffffff; letter-spacing: 0.5px;'>
 <center>
 <a href="http://radioandromeda.tk" title="Radio Andromeda Website">
  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCmKWh2p2XoBJdycGkfCBH_eippZsb-Dj2AvCxPQom6CfdSDrzTpcQeJxVhHDyyWCel3MEIWNUdHU84v-OdWVrcdrYQifvHQdQtlk1WE-BzE7USLSqS4BkcXvsFOPIQD0PYrksfL_SiwgI8qoVDfJSAKgT9veoq669uNx0fj6XkZuX8emFxhusiqT7iZVh/s1600/radioa_4.png" width="500px" ></a>
