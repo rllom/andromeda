@@ -6,6 +6,19 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
 
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script> 
+
+<script>
+let backgrounds = [];
+backgrounds[0] = 'https://i.ibb.co/t3BssWQ/skyblue2.jpg';
+backgrounds[1] = 'https://i.ibb.co/qgdzC3L/futurist-HUD.jpg';
+backgrounds[2] = 'https://i.ibb.co/86153t3/raygreen2.jpg';
+window.onload = ()=> {
+    let setBackground = Math.floor(Math.random() * backgrounds.length);
+    document.body.style.backgroundImage = `url(${backgrounds[setBackground]})`;}
+</script>
+
+  
 <style>  
 body {
   overflow: hidden; /* Hide scrollbars */
