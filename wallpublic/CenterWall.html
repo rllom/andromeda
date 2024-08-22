@@ -73,7 +73,7 @@ letter-spacing: 1px;
 <div class="overlay" id="overlay"></div>
 
     <audio id="audio" src="https://c11.radioboss.fm:18071/stream" preload="none"></audio>
-    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="65%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
+    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="auto" height="80%" alt="Imagen de reproducción" style="cursor: pointer;">
     <script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script>
 
 
@@ -89,8 +89,8 @@ imagen.addEventListener("click", function() {
     audio.play();
     imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de pausa
     imagen.setAttribute("id", "rbcloud_cover15531");
-    imagen.setAttribute("width", "65%");
-    imagen.setAttribute("height", "auto");
+    imagen.setAttribute("width", "auto");
+    imagen.setAttribute("height", "80%");
   
     imagen.classList.add("rotate"); // Agrega la clase 'rotate' para la animación de rotación
     overlay.classList.add("active"); // Mostrar la capa oculta
@@ -101,8 +101,8 @@ imagen.addEventListener("click", function() {
     imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de reproducción
     imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
     imagen.setAttribute("id", "rbcloud_cover15531");
-    imagen.setAttribute("width", "65%");
-    imagen.setAttribute("height", "auto");
+    imagen.setAttribute("width", "auti");
+    imagen.setAttribute("height", "80%");
     imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
     overlay.classList.remove("active"); // Ocultar la capa oculta
     sound = false;
@@ -120,8 +120,8 @@ setInterval(updateImage, 10000);
 var style = document.createElement('style');
 style.innerHTML = `
 .rotate {
-  width: 65%;
-  height: auto;
+  width: auto;
+  height: 80%;
   position: relative;
   animation: rotation 7s linear infinite;
   border-radius: 50%;
