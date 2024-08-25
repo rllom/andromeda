@@ -6,16 +6,16 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
 
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script> 
-
 <script>
-let backgrounds = [];
-backgrounds[0] = 'https://i.ibb.co/t3BssWQ/skyblue2.jpg';
-backgrounds[1] = 'https://i.ibb.co/qgdzC3L/futurist-HUD.jpg';
-backgrounds[2] = 'https://i.ibb.co/86153t3/raygreen2.jpg';
-window.onload = ()=> {
-    let setBackground = Math.floor(Math.random() * backgrounds.length);
-    document.body.style.backgroundImage = `url(${backgrounds[setBackground]})`;}
+function changeBackground() {
+    var images = [ 
+	"https://i.ibb.co/t3BssWQ/skyblue2.jpg", 
+	"https://i.ibb.co/qgdzC3L/futurist-HUD.jpg", 
+	"https://i.ibb.co/86153t3/raygreen2.jpg" ]; // list of image files
+    var randomImage = images[Math.floor(Math.random() * images.length)];
+    document.body.style.backgroundImage = "url(" + randomImage + ")";
+    setTimeout(changeBackground, 180000); // change image every 3 minutes (180000 milliseconds)
+}
 </script>
 
   
@@ -66,8 +66,7 @@ letter-spacing: 1px;
 </style>
 
 </head>
-<body>
-
+<body onload="changeBackground()">
 
 <center>
 <div class="overlay" id="overlay"></div>
@@ -181,9 +180,24 @@ cargarReloj();
 <center>
 
 <a href="https://rllom.github.io/radioandromeda/lvplayer/vinilo+luna.html">
- <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCmKWh2p2XoBJdycGkfCBH_eippZsb-Dj2AvCxPQom6CfdSDrzTpcQeJxVhHDyyWCel3MEIWNUdHU84v-OdWVrcdrYQifvHQdQtlk1WE-BzE7USLSqS4BkcXvsFOPIQD0PYrksfL_SiwgI8qoVDfJSAKgT9veoq669uNx0fj6XkZuX8emFxhusiqT7iZVh/s1600/radioa_4.png" width="35%" >
+ <img  id="dynamicImage" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%" >
 </a>
   
+<script>
+var images = [ "https://images2.imgbox.com/ff/1e/bcDJcc5h_o.png", 
+	       "https://images2.imgbox.com/08/1b/qbTsfTrx_o.png", 
+	       "https://images2.imgbox.com/b7/76/CpHmvwzP_o.png",
+	       "https://images2.imgbox.com/dd/33/r5al5cqd_o.png",
+	       "https://images2.imgbox.com/a0/1e/9fLPQR3j_o.png" ];
+var i = 0;
+setInterval(function() {
+    document.getElementById('dynamicImage').src = images[i];
+    i = (i + 1) % images.length;
+}, 15000);
+</script>
+
+
+
 <br>
 <!-- RadioBOSS Cloud NowPlaying Widget (Start) -->
 <span id='rbcloud_nowplaying16384'></span>
