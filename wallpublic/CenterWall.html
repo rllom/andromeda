@@ -5,6 +5,7 @@
   <title>For Wallpaper Engine</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
 function changeBackground() {
@@ -14,7 +15,7 @@ function changeBackground() {
 	"https://i.ibb.co/86153t3/raygreen2.jpg" ]; // list of image files
     var randomImage = images[Math.floor(Math.random() * images.length)];
     document.body.style.backgroundImage = "url(" + randomImage + ")";
-    setTimeout(changeBackground, 180000); // change image every 3 minutes (180000 milliseconds)
+    setTimeout(changeBackground, 300000); // change image every 5 minutes (300000 milliseconds)
 }
 </script>
 
@@ -63,6 +64,10 @@ border: 0px solid black;
 font: bold 1.5em dotum, "Michroma", arial; text-align: center; color:#ffffff;
 letter-spacing: 1px;
 }  
+
+#image {
+  opacity 2s ease-in-out /* efecto de aparecer de los logos */
+}
 </style>
 
 </head>
@@ -180,20 +185,23 @@ cargarReloj();
 <center>
 
 <a href="https://rllom.github.io/radioandromeda/lvplayer/vinilo+luna.html">
- <img  id="dynamicImage" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%" >
+<img  id="image" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%">
 </a>
   
 <script>
-var images = [ "https://images2.imgbox.com/ff/1e/bcDJcc5h_o.png", 
+let images = [ "https://images2.imgbox.com/ff/1e/bcDJcc5h_o.png", 
 	       "https://images2.imgbox.com/08/1b/qbTsfTrx_o.png", 
 	       "https://images2.imgbox.com/b7/76/CpHmvwzP_o.png",
 	       "https://images2.imgbox.com/dd/33/r5al5cqd_o.png",
-	       "https://images2.imgbox.com/a0/1e/9fLPQR3j_o.png" ];
-var i = 0;
-setInterval(function() {
-    document.getElementById('dynamicImage').src = images[i];
-    i = (i + 1) % images.length;
-}, 15000);
+	       "https://images2.imgbox.com/a0/1e/9fLPQR3j_o.png"];
+let currentImage = 0;
+
+setInterval(() => {
+    currentImage = (currentImage + 1) % images.length;
+    $('#image').fadeOut(2000, function() {
+        $(this).attr('src', images[currentImage]).fadeIn(2000);
+    });
+}, 20000); // Change image every 20 seconds
 </script>
 
 
