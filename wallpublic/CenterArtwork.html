@@ -1,0 +1,284 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<head>
+  <title>For Wallpaper Engine</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
+
+ 
+<style>  
+body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+background-color: #232b2b;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+        }
+        .background {
+	    position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 3s ease-in-out;
+        }
+        #background1 {
+            z-index: 1;
+            opacity: 1;
+        }
+        #background2 {
+            z-index: 0;
+            opacity: 0;
+        }
+
+ .background {
+            transition: opacity 2.5s ease-in-out;
+        }
+#background1 {
+            z-index: -2;
+            opacity: 0.5;
+        }
+#background2 {
+            z-index: -1;
+            opacity: 0;
+        }
+
+
+img {
+  border-radius: 10px;
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  /* background-color: rgba(0, 0, 0, 0.5); */  /* Fondo semitransparente */
+  display: none; /* Inicialmente oculta */
+ 
+}
+.overlay.active {
+  display: flex; /* Mostrar la capa cuando esté activa */
+}
+
+.reloj {
+width: 250px; 
+height: 20px; 
+padding: 0px 0px; 
+border: 0px solid black; 
+font: bold 1.6em dotum, "Michroma", arial; text-align: center; color:#ffffff;
+letter-spacing: 1px;
+text-shadow: 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000;
+}  
+
+#image {
+  opacity 2s ease-in-out /* efecto de aparecer de los logos */
+}
+
+.stroke-text {
+                 text-shadow: 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000; /* Esto crea un contorno negro */
+        }
+
+</style>
+
+</head>
+<body onload="updateBackground()">
+    <div id="background1" class="background"></div>
+    <div id="background2" class="background"></div>
+
+    <script>
+        function updateBackground() {
+            const bg1 = document.getElementById('background1');
+            const bg2 = document.getElementById('background2');
+            let toggle = true;
+
+            function updateImage() {
+                const timestamp = new Date().getTime();
+                const newImageUrl = `url('https://c11.radioboss.fm/w/artwork/71.png?${timestamp}')`;
+
+                const newBg = toggle ? bg2 : bg1;
+                const oldBg = toggle ? bg1 : bg2;
+
+                const img = new Image();
+                img.src = `https://c11.radioboss.fm/w/artwork/71.png?${timestamp}`;
+
+                img.onload = function() {
+                    newBg.style.backgroundImage = newImageUrl;
+                    newBg.style.opacity = 1;
+                    oldBg.style.opacity = 0;
+                    toggle = !toggle;
+                };
+
+                img.onerror = function() {
+                    console.error("Error al cargar la imagen: " + img.src);
+                };
+            }
+
+            updateImage(); // Actualiza la imagen al cargar la página
+            setInterval(updateImage, 20000); // Actualiza la imagen cada 10 segundos
+        }
+    </script>
+
+<center>
+<div class="overlay" id="overlay"></div>
+
+    <audio id="audio" src="https://c11.radioboss.fm:18071/stream" preload="none"></audio>
+    <img id="rbcloud_cover15531" src="https://c11.radioboss.fm/w/artwork/71.png" width="70%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
+    <script src='https://c11.radioboss.fm/w/cover.js?u=71&amp;wid=15531'></script>
+
+
+
+<script>
+var audio = document.getElementById("audio");
+var imagen = document.getElementById("rbcloud_cover15531");
+var overlay = document.getElementById("overlay");
+var sound = false;
+
+imagen.addEventListener("click", function() {
+  if (!sound) {
+    audio.play();
+    imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de pausa
+    imagen.setAttribute("id", "rbcloud_cover15531");
+    imagen.setAttribute("width", "70%");
+    imagen.setAttribute("height", "auto");
+  
+    imagen.classList.add("rotate"); // Agrega la clase 'rotate' para la animación de rotación
+    overlay.classList.add("active"); // Mostrar la capa oculta
+    sound = true;
+  } else {
+    audio.pause();
+    audio.src = audio.src;
+    imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de reproducción
+    imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
+    imagen.setAttribute("id", "rbcloud_cover15531");
+    imagen.setAttribute("width", "70%");
+    imagen.setAttribute("height", "auto");
+    imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
+    overlay.classList.remove("active"); // Ocultar la capa oculta
+    sound = false;
+  }
+});
+
+function updateImage() {
+  const image = document.getElementById('rbcloud_cover15531');
+  const timestamp = new Date().getTime();
+  image.src = `https://c11.radioboss.fm/w/artwork/71.png?${timestamp}`;
+}
+setInterval(updateImage, 10000);
+
+// Estilos CSS para la animación de rotación
+var style = document.createElement('style');
+style.innerHTML = `
+.rotate {
+  width: 70%;
+  height: auto;
+  position: relative;
+  animation: rotation 7s linear infinite;
+  border-radius: 50%;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+`;
+document.head.appendChild(style);
+</script>
+
+<div id="relojnumerico" class="reloj" onload="cargarReloj()" style='position:absolute; top:5px; width:100%; left:0px; margin-left:0; margin-right:0;'>
+<!-- Acá mostraremos el reloj --> 
+</div>
+
+<script>
+function cargarReloj(){
+    // Haciendo uso del objeto Date() obtenemos la hora, minuto y segundo 
+    var fechahora = new Date();
+    var hora = fechahora.getHours(); 
+    var minuto = fechahora.getMinutes(); 
+    var segundo = fechahora.getSeconds(); 
+    // Variable meridiano con el valor 'AM' 
+    var meridiano = "am";
+    // Si la hora es igual a 0, declaramos la hora con el valor 12 
+    if(hora == 0){
+        hora = 12;
+    }
+    // Si la hora es mayor a 12, restamos la hora - 12 y mostramos la variable meridiano con el valor 'PM' 
+    if(hora > 12) {
+        hora = hora - 12;
+        // Variable meridiano con el valor 'PM' 
+        meridiano = "pm";
+     }
+    // Formateamos los ceros '0' del reloj 
+    hora = (hora < 10) ? "0" + hora : hora;
+    minuto = (minuto < 10) ? "0" + minuto : minuto;
+    segundo = (segundo < 10) ? "0" + segundo : segundo;
+    // Enviamos la hora a la vista HTML 
+    var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
+    document.getElementById("relojnumerico").innerText = tiempo;
+    document.getElementById("relojnumerico").textContent = tiempo;
+    // Cargamos el reloj a los 500 milisegundos 
+    setTimeout(cargarReloj, 500);
+ }
+// Ejecutamos la función 'CargarReloj' 
+cargarReloj();
+</script>
+
+
+<DIV  class="stroke-text" id='float' style='position:absolute; bottom:40px; width:100%; left:0px; margin-left:0; margin-right:0; font: bold 1em dotum, "Michroma", arial; text-align: center; color:#ffffff; letter-spacing: 0.9px;'>
+<center>
+
+<a href="https://rllom.github.io/radioandromeda/lvplayer/vinilo+luna.html">
+<img  id="image" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%">
+</a>
+  
+<script>
+let images = [ "https://i.postimg.cc/c4cvrxz6/2024-0.png", 
+	       "https://i.postimg.cc/K8q4D9x2/2024-1.png", 
+	       "https://i.postimg.cc/s2Mx6pgZ/2024-2.png",
+	       "https://i.postimg.cc/VN263dJZ/2024-3.png",
+	       "https://i.postimg.cc/j2bjSmQz/2024-4.png",
+	       "https://i.postimg.cc/90YQRbJs/2024-5.png",
+	       "https://i.postimg.cc/wxXvGxgF/2024-6.png"
+	     ];
+let currentImage = 0;
+
+setInterval(() => {
+    currentImage = (currentImage + 1) % images.length;
+    $('#image').fadeOut(2000, function() {
+        $(this).attr('src', images[currentImage]).fadeIn(2000);
+    });
+}, 20000); // Change image every 20 seconds
+</script>
+
+
+
+<br>
+<!-- RadioBOSS Cloud NowPlaying Widget (Start) -->
+<span id='rbcloud_nowplaying16384'></span>
+<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&amp;wid=16384'></script>
+<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+</Center>
+
+</div>
+
+</body>
+</html>
