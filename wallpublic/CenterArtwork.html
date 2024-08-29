@@ -4,10 +4,11 @@
   <title>For Wallpaper Engine</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  
 <style>  
 body {
+
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -83,7 +84,7 @@ text-shadow:
                  2px  2px 0 #000;
 }  
 
-#image {
+#logo {
   opacity 2s ease-in-out /* efecto de aparecer de los logos */
 }
 
@@ -131,7 +132,7 @@ text-shadow:
             }
 
             updateImage(); // Actualiza la imagen al cargar la página
-            setInterval(updateImage, 20000); // Actualiza la imagen cada 10 segundos
+            setInterval(updateImage, 10000); // Actualiza la imagen cada 10 segundos
         }
     </script>
 
@@ -247,7 +248,7 @@ cargarReloj();
 <center>
 
 <a href="https://rllom.github.io/radioandromeda/lvplayer/vinilo+luna.html">
-<img  id="image" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%">
+<img  id="logo" src="https://images2.imgbox.com/3e/2f/QmWsntfD_o.png" width="35%">
 </a>
   
 <script>
@@ -263,7 +264,7 @@ let currentImage = 0;
 
 setInterval(() => {
     currentImage = (currentImage + 1) % images.length;
-    $('#image').fadeOut(2000, function() {
+    $('#logo').fadeOut(2000, function() {
         $(this).attr('src', images[currentImage]).fadeIn(2000);
     });
 }, 20000); // Change image every 20 seconds
