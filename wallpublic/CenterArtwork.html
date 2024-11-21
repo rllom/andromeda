@@ -6,7 +6,23 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 
+
+ <!--PWA-FACTORY.COM-->
+            <!--ADD THE FILES IN YOUR ROOT FOLDER & INCLUDE THIS IN YOUR HTML HEAD-->
+                <link rel="manifest" href="manifest.json">
+                <script>
+                    if ('serviceWorker' in navigator) {
+                        window.addEventListener("load", () => {
+                            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                                console.log('ServiceWorker registered');
+                              }).catch(function(err) {
+                                console.log('ServiceWorker error: ', err);
+                              });
+                        })
+                    }
+                </script>    
+            <!--PWA-FACTORY.COM-->
+	
 <style>  
 body {
 
