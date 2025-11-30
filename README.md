@@ -6,6 +6,7 @@ https://rllom.github.io/andromeda/ <br>
 https://rllom.github.io/andromeda/index.html <br>
 https://rllom.github.io/andromeda/sonando.html <br>
 
+PWA https://rllom.github.io/andromeda/wallpublic/CenterArtwork.html <br>
 https://rllom.github.io/andromeda/wallpublic/wallpaper.html <br>
 https://rllom.github.io/andromeda/wallpublic/smartwallpaper.html<br>
 https://rllom.github.io/andromeda/wallpublic/smartv_tablet.html<br>
