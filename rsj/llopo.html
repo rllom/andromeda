@@ -2,7 +2,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <head>
   <title>RIO SAN JUAN</title>
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Michroma">
 
 <style>  
@@ -16,14 +15,8 @@ body {
   padding: 0;
   display: grid;
   place-items: center;
-  height: 83vh;
-  background-color: #ffffff;
-  background-image: url("rsj.jpg");
-  background-size: cover;  
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-position: center;
-  background-attachment: fixed;
+  height: 100vh; /* Cambiado de 83vh a 100vh */
+}
 
 .container {
   width: 100%;
@@ -57,173 +50,185 @@ img {
 }
 
 .reloj {
-width: 250px; 
-height: 20px; 
-padding: 0px 0px; 
-border: 0px solid black; 
-font: bold 1.1em dotum, "Michroma", arial; text-align: center; color:#ffffff;
-letter-spacing: 1px;
+  width: 250px; 
+  height: 20px; 
+  padding: 0px 0px; 
+  border: 0px solid black; 
+  font: bold 1.1em dotum, "Michroma", arial; text-align: center; color:#ffffff;
+  letter-spacing: 1px;
 }  
 
 .fs-vid-background {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			z-index: 2;
-		}
-		.fs-vid-background video {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-		}
-		video {
-			max-width: 100%;
-		}
+  position: fixed; /* Cambiado de absolute a fixed */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Cambiado de 2 a -1 para que esté detrás */
+}
+
+.fs-vid-background video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  max-width: 100%;
+}
+
+/* Asegurar que los elementos interactivos estén sobre el video */
+#floting, 
+.div-contenedor-principal {
+  position: relative;
+  z-index: 1;
+}
 
 </style>
 
 </head>
 <body>
 
-
+<!-- Video de fondo -->
 <div class="fs-vid-background">
-<video autoplay="true" muted="true" loop="true">
-<source src="castillo.mp4" type="video/mp4">
-</video>
-
-<DIV style='display:scroll; position:fixed; top:0px; left:0px; width:55%; height:87%; margin-right:auto;'>
-
-<div id="relojnumerico" class="reloj" onload="cargarReloj()" style='display:scroll; position:fixed; top:10px; align:center;'>
-<!-- Acá mostraremos el reloj --> 
+  <video autoplay muted loop playsinline>
+  <!-- <source src="castillo.webm" type="video/webm"> -->
+  <source src="castillo.mp4" type="video/mp4"> 
+  </video>
 </div>
 
-<script>
-function cargarReloj(){
-    // Haciendo uso del objeto Date() obtenemos la hora, minuto y segundo 
-    var fechahora = new Date();
-    var hora = fechahora.getHours(); 
-    var minuto = fechahora.getMinutes(); 
-    var segundo = fechahora.getSeconds(); 
-    // Variable meridiano con el valor 'AM' 
-    var meridiano = "am";
-    // Si la hora es igual a 0, declaramos la hora con el valor 12 
-    if(hora == 0){
-        hora = 12;
+<!-- Contenedor principal con iframe -->
+<DIV class="div-contenedor-principal" style='position:fixed; top:0px; left:0px; width:55%; height:87%; margin-right:auto; z-index: 1;'>
+
+  <div id="relojnumerico" class="reloj" onload="cargarReloj()" style='position:fixed; top:10px; left:50%; transform: translateX(-50%);'>
+    <!-- Acá mostraremos el reloj --> 
+  </div>
+
+  <script>
+  function cargarReloj(){
+      // Haciendo uso del objeto Date() obtenemos la hora, minuto y segundo 
+      var fechahora = new Date();
+      var hora = fechahora.getHours(); 
+      var minuto = fechahora.getMinutes(); 
+      var segundo = fechahora.getSeconds(); 
+      // Variable meridiano con el valor 'AM' 
+      var meridiano = "am";
+      // Si la hora es igual a 0, declaramos la hora con el valor 12 
+      if(hora == 0){
+          hora = 12;
+      }
+      // Si la hora es mayor a 12, restamos la hora - 12 y mostramos la variable meridiano con el valor 'PM' 
+      if(hora > 12) {
+          hora = hora - 12;
+          // Variable meridiano con el valor 'PM' 
+          meridiano = "pm";
+      }
+      // Formateamos los ceros '0' del reloj 
+      hora = (hora < 10) ? "0" + hora : hora;
+      minuto = (minuto < 10) ? "0" + minuto : minuto;
+      segundo = (segundo < 10) ? "0" + segundo : segundo;
+      // Enviamos la hora a la vista HTML 
+      var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
+      document.getElementById("relojnumerico").innerText = tiempo;
+      document.getElementById("relojnumerico").textContent = tiempo;
+      // Cargamos el reloj a los 500 milisegundos 
+      setTimeout(cargarReloj, 500);
+  }
+  // Ejecutamos la función 'CargarReloj' 
+  cargarReloj();
+  </script>
+
+  <br><br>
+  <br><br>
+  <br><br>
+
+  <iframe src="rsj.html" style="width:85%; height:85%; margin:0px;" scrolling="no" frameborder="no"></iframe>
+
+</DIV> 
+
+<!-- Panel derecho con reproductor -->
+<DIV id='floting' style='position:fixed; top:10px; width:40%; right:68px; margin-left:0; margin-right:0; z-index: 1;'>
+  <div class="overlay" id="overlay">
+    <!-- RadioBOSS Cloud NowPlaying Widget (Start) -->
+    <span id='rbcloud_nowplaying16384'></span>
+    <script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&amp;wid=16384'></script>
+    <!-- RadioBOSS Cloud NowPlaying Widget (End) -->
+  </div>
+
+  <br><br><br><br>
+
+  <audio id="audio" src="https://c11.radioboss.fm/stream/71" preload="none"></audio>
+  <img id="imagen" src="playllopo.png" width="100%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
+
+  <script>
+  var audio = document.getElementById("audio");
+  var imagen = document.getElementById("imagen");
+  var overlay = document.getElementById("overlay");
+  var sound = false;
+
+  imagen.addEventListener("click", function() {
+    if (!sound) {
+      audio.play();
+      imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de pausa
+      imagen.setAttribute("id", "rbcloud_cover15531");
+      imagen.setAttribute("width", "100%");
+      imagen.setAttribute("height", "auto");
+      imagen.classList.add("rotate"); // Agrega la clase 'rotate' para la animación de rotación
+      overlay.classList.add("active"); // Mostrar la capa oculta
+      sound = true;
+    } else {
+      audio.pause();
+      audio.src = audio.src;
+      imagen.src = "playllopo.png"; // Cambia la imagen a una imagen de reproducción
+      imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
+      imagen.setAttribute("width", "100%");
+      imagen.setAttribute("height", "auto");
+      imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
+      overlay.classList.remove("active"); // Ocultar la capa oculta
+      sound = false;
     }
-    // Si la hora es mayor a 12, restamos la hora - 12 y mostramos la variable meridiano con el valor 'PM' 
-    if(hora > 12) {
-        hora = hora - 12;
-        // Variable meridiano con el valor 'PM' 
-        meridiano = "pm";
-     }
-    // Formateamos los ceros '0' del reloj 
-    hora = (hora < 10) ? "0" + hora : hora;
-    minuto = (minuto < 10) ? "0" + minuto : minuto;
-    segundo = (segundo < 10) ? "0" + segundo : segundo;
-    // Enviamos la hora a la vista HTML 
-    var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
-    document.getElementById("relojnumerico").innerText = tiempo;
-    document.getElementById("relojnumerico").textContent = tiempo;
-    // Cargamos el reloj a los 500 milisegundos 
-    setTimeout(cargarReloj, 500);
- }
-// Ejecutamos la función 'CargarReloj' 
-cargarReloj();
-</script>
+  });
 
-<br><br>
-<br><br>
-<br><br>
+  function updateImage() {
+    const image = document.getElementById('rbcloud_cover15531');
+    if (image) {
+      const timestamp = new Date().getTime();
+      image.src = `https://c11.radioboss.fm/w/artwork/71.png?${timestamp}`;
+    }
+  }
+  setInterval(updateImage, 10000);
 
-<iframe src="rsj.html" style="width:85%; height:85%; margin:0px;" scrolling="no" frameborder="no"></iframe>
+  // Estilos CSS para la animación de rotación
+  var style = document.createElement('style');
+  style.innerHTML = `
+  .rotate {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    animation: rotation 7s linear infinite;
+    border-radius: 50%;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  `;
+  document.head.appendChild(style);
+  </script>
 
-</div> 
-
-
-<DIV id='floting' style='position:fixed; top:10px; width:40%; right:68px; margin-left:0; margin-right:0;'>
-<div class="overlay" id="overlay">
-
-<!-- RadioBOSS Cloud NowPlaying Widget (Start) -->
-<span id='rbcloud_nowplaying16384'></span>
-<script src='https://c11.radioboss.fm/w/nowplaying.js?u=71&amp;wid=16384'></script>
-<!-- RadioBOSS Cloud NowPlaying Widget (End) -->
-
+  <img id="overlay.flex" src="https://rllom.github.io/andromeda/homepage/arm7.png" style="opacity: 0.8; border-radius: 0px; box-shadow: 0px 0px 0px 0px #000000; position:fixed; top:10px; right:5px; width:15%; z-index: 1;" />
+    
 </div>
 
-<br><br><br><br>
-
-    <audio id="audio" src="https://c11.radioboss.fm/stream/71" preload="none"></audio>
-    <img id="imagen" src="playllopo.png" width="100%" height="auto" alt="Imagen de reproducción" style="cursor: pointer;">
- 
-<script>
-var audio = document.getElementById("audio");
-var imagen = document.getElementById("imagen");
-var overlay = document.getElementById("overlay");
-var sound = false;
-
-imagen.addEventListener("click", function() {
-  if (!sound) {
-    audio.play();
-    imagen.src = "https://c11.radioboss.fm/w/artwork/71.png"; // Cambia la imagen a una imagen de pausa
-    imagen.setAttribute("id", "rbcloud_cover15531");
-    imagen.setAttribute("width", "100%");
-    imagen.setAttribute("height", "auto");
-    imagen.classList.add("rotate"); // Agrega la clase 'rotate' para la animación de rotación
-    overlay.classList.add("active"); // Mostrar la capa oculta
-    sound = true;
-  } else {
-    audio.pause();
-    audio.src = audio.src;
-    imagen.src = "playllopo.png"; // Cambia la imagen a una imagen de reproducción
-    imagen.setAttribute("id", "imagen-reproduccion"); // Agrega el id "imagen-reproduccion" a la imagen
-    imagen.setAttribute("width", "100%");
-    imagen.setAttribute("height", "auto");
-    imagen.classList.remove("rotate"); // Quita la clase 'rotate' para detener la animación de rotación
-    overlay.classList.remove("active"); // Ocultar la capa oculta
-    sound = false;
-  }
-});
-
-function updateImage() {
-  const image = document.getElementById('rbcloud_cover15531');
-  const timestamp = new Date().getTime();
-  image.src = `https://c11.radioboss.fm/w/artwork/71.png?${timestamp}`;
-}
-setInterval(updateImage, 10000);
-
-// Estilos CSS para la animación de rotación
-var style = document.createElement('style');
-style.innerHTML = `
-.rotate {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  animation: rotation 7s linear infinite;
-  border-radius: 50%;
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-`;
-document.head.appendChild(style);
-</script>
-
-<img id="overlay.flex" src="https://rllom.github.io/andromeda/homepage/arm7.png"  style="opacity: 0.8; border-radius: 0px; box-shadow: 0px 0px 0px 0px #000000; position:fixed; top:10px; right:5px; width:15%;" />
-	
-</div>
-
-<DIV style='position:fixed; bottom:15px; left:10px; margin-left:0; margin-right:0; font: bold 0.8em dotum, "Michroma", arial; text-align: center; color:#ffffff;'>
-<a href="https://www.facebook.com" target="_blank" />FACEBOOK</A> &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="http://www.youtube.com/" target="_blank" />YOUTUBE</A>  &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="https://www.sigob.gob.ni/sigrun/ter2024/formularios/login.aspx" target="_blank" />SIGRUN 2024</A>  &nbsp;&nbsp;| &nbsp;&nbsp;
-
+<!-- Menú inferior -->
+<DIV style='position:fixed; bottom:15px; left:10px; margin-left:0; margin-right:0; font: bold 0.8em dotum, "Michroma", arial; text-align: center; color:#ffffff; z-index: 1;'>
+  <a href="https://www.facebook.com" target="_blank">FACEBOOK</a> &nbsp;&nbsp;| &nbsp;&nbsp;
+  <a href="http://www.youtube.com/" target="_blank">YOUTUBE</a> &nbsp;&nbsp;| &nbsp;&nbsp;
+  <a href="https://www.sigob.gob.ni/sigrun/ter2024/formularios/login.aspx" target="_blank">SIGRUN 2024</a> &nbsp;&nbsp;| &nbsp;&nbsp;
 </div>
 
 </body>
